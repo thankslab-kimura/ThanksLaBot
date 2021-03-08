@@ -6,7 +6,7 @@ import os
 
 def data():
     
-    file_name = 'data/sdgs/targets.csv'
+    file_name = 'data/public/sdgs/targets.csv'
     
     if (os.path.exists(file_name)):
     
@@ -48,15 +48,15 @@ def data():
 
 def message():
     
-    d = data()
+    data = data()
     
-    if (len(d) == 2):
+    if (len(data) == 2):
         
         index = ""
         target = ""
         
-        index = d[0]
-        target = d[1]
+        index = data[0]
+        target = data[1]
         
         if (len(index) > 0 and len(target) > 0):
         

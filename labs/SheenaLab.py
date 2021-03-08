@@ -6,8 +6,8 @@ import os
 
 def generatedTitle():
     
-    kanji_file_name = 'data/sheena/kanji.csv'
-    katakana_file_name = 'data/sheena/katakana.csv'
+    kanji_file_name = 'data/public/sheena/kanji.csv'
+    katakana_file_name = 'data/public/sheena/katakana.csv'
     
     if (os.path.exists(kanji_file_name) and os.path.exists(katakana_file_name)):
         

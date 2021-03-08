@@ -1,12 +1,10 @@
-# coding: utf-8
-
 import pandas as pd
 import random as rd
 import os
 
 def data():
     
-    file_name = 'data/comic/zemmyon.csv'
+    file_name = 'data/public/comic/zemmyon.csv'
     
     if (os.path.exists(file_name)):
     

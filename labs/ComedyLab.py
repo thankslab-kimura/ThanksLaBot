@@ -6,7 +6,7 @@ import os
 
 def data():
     
-    file_name = 'data/youtube/comedy.csv'
+    file_name = 'data/public/youtube/comedy.csv'
     
     if (os.path.exists(file_name)):
     

@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
+#coding: utf-8
 
 import pandas as pd
 import random as rd
@@ -10,7 +6,7 @@ import os
 
 def data():
     
-    file_name = 'data/english/englishvocabulary.csv'
+    file_name = 'data/public/english/englishvocabulary.csv'
     
     if (os.path.exists(file_name)):
     
@@ -67,4 +63,3 @@ def message():
         return message
     
     return ""
-
