@@ -2,6 +2,35 @@
 
 import numpy as np
 import random as rd
+import pandas as pd
+import os
+
+def selected_keyword():
+    
+    file_name = 'data/private/future/keywords.csv'
+    
+    if (os.path.exists(file_name)):
+    
+        items = pd.read_csv(file_name,encoding="utf-8")
+        keywords = items['keyword']
+        number_of_keywords = len(keywords)
+        
+        if (number_of_keywords > 0):
+            
+            last_index = number_of_keywords - 1
+                
+            selected_keyword = ""
+                
+            if (last_index == 0):
+                selected_keyword = keywords[0]
+                
+            else:
+                selected_index = rd.randint(0, last_index)
+                selected_keyword = keywords[selected_index]
+    
+            return selected_keyword
+    
+    return ""
 
 def created_key():
     
@@ -85,3 +114,17 @@ def encrypted_message(message):
     print(decrypted_message(en_message, en_alphabet))
             
     return en_message
+
+def message():
+    
+    raw_message = selected_keyword()
+    en_message = encrypted_message(raw_message)
+    
+    if (len(en_message) > 0):
+        
+        en_message = en_message + " #cryptogram"
+        en_message = en_message + " #暗号文"
+        
+        return en_message
+    
+    return ""
