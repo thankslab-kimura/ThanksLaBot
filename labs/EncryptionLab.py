@@ -58,6 +58,7 @@ def decrypted_message(en_message, en_alphabet):
 
 def encrypted_message(message):
     
+    raw_message = message.upper()
     en_message = ""
     
     raw_alphabet = [
@@ -72,7 +73,7 @@ def encrypted_message(message):
     keys = created_key()
     en_alphabet = encrypted_alphabet(raw_alphabet, keys)
     
-    for letter in message:
+    for letter in raw_message:
         
         try:
             index = raw_alphabet.index(letter)
