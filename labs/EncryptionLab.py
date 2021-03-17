@@ -5,7 +5,7 @@ import random as rd
 import pandas as pd
 import os
 
-def selected_keyword():
+def data():
     
     file_name = 'data/private/future/keywords.csv'
     
@@ -13,22 +13,31 @@ def selected_keyword():
     
         items = pd.read_csv(file_name,encoding="utf-8")
         keywords = items['keyword']
-        number_of_keywords = len(keywords)
         
-        if (number_of_keywords > 0):
-            
-            last_index = number_of_keywords - 1
-                
-            selected_keyword = ""
-                
-            if (last_index == 0):
-                selected_keyword = keywords[0]
-                
-            else:
-                selected_index = rd.randint(0, last_index)
-                selected_keyword = keywords[selected_index]
+        if (len(keywords) > 0):
+            return keywords.values.tolist()
     
-            return selected_keyword
+    return []
+
+def selected_keyword():
+    
+    keywords = data()
+    number_of_keywords = len(keywords)
+    
+    if (number_of_keywords > 0):
+            
+        last_index = number_of_keywords - 1
+                
+        selected_keyword = ""
+                
+        if (last_index == 0):
+            selected_keyword = keywords[0]
+                
+        else:
+            selected_index = rd.randint(0, last_index)
+            selected_keyword = keywords[selected_index]
+    
+        return selected_keyword
     
     return ""
 
@@ -111,9 +120,21 @@ def encrypted_message(message):
         except ValueError as error:
             en_message += letter
             
-    print(decrypted_message(en_message, en_alphabet))
+    if (isSuccessInEncryption(en_message, en_alphabet)):
+        return en_message
             
-    return en_message
+    return ""
+
+def isSuccessInEncryption(en_message, en_alphabet):
+    
+    de_message = decrypted_message(en_message, en_alphabet)
+    keywords = data()
+    
+    if (len(keywords) > 0):
+        return (de_message in keywords)
+    
+    return False
+    
 
 def message():
     
