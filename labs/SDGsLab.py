@@ -6,11 +6,11 @@ import os
 
 def data():
     
-    file_name = 'data/public/sdgs/targets.csv'
+    file_name = 'labs/data/public/sdgs/targets.csv'
     
     if (os.path.exists(file_name)):
     
-        items = pd.read_csv(file_name,encoding="Shift-JIS")
+        items = pd.read_csv(file_name,encoding="utf-8")
 
         indices = []
         targets = []
@@ -48,15 +48,15 @@ def data():
 
 def message():
     
-    data = data()
+    d = data()
     
-    if (len(data) == 2):
+    if (len(d) == 2):
         
         index = ""
         target = ""
         
-        index = data[0]
-        target = data[1]
+        index = d[0]
+        target = d[1]
         
         if (len(index) > 0 and len(target) > 0):
         

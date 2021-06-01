@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import tweepy, config
+import tweepy
+import labs.data.private.config as config
 
 def tweet(content):
     
