@@ -1,13 +1,13 @@
 # coding: utf-8
 
-import DateLab
-from TwitterLab import tweet
-from datetime import datetime
+from labs.TwitterLab import tweet
+import labs.SDGsLab as SDGs
+import labs.ComedyLab as Comedy
     
 if __name__ == '__main__':
     
-    now = datetime.now()
-    message = DateLab.message(now)
+    #message = SDGs.message()
+    message = Comedy.message()
     
     if (len(message) > 0):
         

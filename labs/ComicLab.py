@@ -4,11 +4,11 @@ import os
 
 def data():
     
-    file_name = 'data/public/comic/zemmyon.csv'
+    file_name = 'labs/data/public/comic/zemmyon.csv'
     
     if (os.path.exists(file_name)):
     
-        items = pd.read_csv(file_name,encoding="Shift-JIS")
+        items = pd.read_csv(file_name,encoding="utf-8")
 
         words = []
         urls = []
